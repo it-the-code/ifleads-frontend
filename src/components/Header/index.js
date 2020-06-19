@@ -1,13 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { MdMoreVert, MdAdd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { Navbar, Menu, UserOptions, Dropdown } from './style';
 import logo from '../../assets/images/ifrn-logo.svg';
 
-const Header = ({ username }) => {
+const Header = () => {
   const [isDisplayed, setIsDisplayed] = React.useState(false);
+  const username = useSelector(({ user }) => (user ? user.username : ''));
 
   return (
     <Navbar>
@@ -52,12 +52,4 @@ const Header = ({ username }) => {
   );
 };
 
-Header.propTypes = {
-  username: PropTypes.string.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  username: state.user ? state.user.name : '',
-});
-
-export default connect(mapStateToProps)(Header);
+export default Header;
