@@ -1,11 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import { MaterialPage, LoanPage, LostPage } from './pages';
 import { Header } from './components';
 import GlobalStyle from './styles/GlobalStyle';
 
+const history = createBrowserHistory();
+
 const App = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <GlobalStyle />
     <Header />
     <Switch>
@@ -13,7 +16,7 @@ const App = () => (
       <Route path="/loans" component={LoanPage} />
       <Route path="/losts" component={LostPage} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;
