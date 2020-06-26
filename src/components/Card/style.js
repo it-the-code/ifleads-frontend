@@ -9,6 +9,10 @@ export const Card = styled.div`
   margin: 0 1.5em 1.5em 0;
   box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.15);
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 
   button {
     background: var(--blue);
@@ -38,7 +42,7 @@ export const CardHeading = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0;
-  margin-bottom: 0.9em;
+  margin-bottom: 1.5em;
 
   h1 {
     font-size: 1rem;

@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  MdKeyboardArrowDown,
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+} from 'react-icons/md';
 import { Main, Materials, ActivityHistory } from './style';
 import Card from '../../components/Card';
 
@@ -45,7 +50,35 @@ const Material = () => (
         />
       ))}
     </Materials>
-    <ActivityHistory>Activity</ActivityHistory>
+    <ActivityHistory>
+      <h1>Registro de Atividades</h1>
+      {/* Histórico dos Materiais */}
+      <div>
+        {/* Material */}
+        <div>
+          {/* Material Info */}
+          <div>
+            <div>
+              <h2>Nome Material</h2>
+              <span>DEVOLVIDO há 2 minutos</span>
+            </div>
+            <MdKeyboardArrowDown size={30} />
+          </div>
+          {/* Loan Info */}
+          <div>
+            <div>
+              <h3>Emp. para:</h3>
+              <span>20161038060002</span>
+            </div>
+            <h3>Não devolvido</h3>
+          </div>
+        </div>
+        <div>
+          <MdKeyboardArrowLeft size={30} />
+          <MdKeyboardArrowRight size={30} />
+        </div>
+      </div>
+    </ActivityHistory>
   </Main>
 );
 
