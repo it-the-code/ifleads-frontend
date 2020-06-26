@@ -7,6 +7,8 @@ export const Card = styled.div`
   line-height: 1.3em;
   border-radius: 4px;
   margin: 0 1.5em 1.5em 0;
+  box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.15);
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   button {
     background: var(--blue);
@@ -18,6 +20,7 @@ export const Card = styled.div`
     margin-top: 1.2em;
     width: 100%;
     cursor: pointer;
+    outline: none;
   }
 `;
 
