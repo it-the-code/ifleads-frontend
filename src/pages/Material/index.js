@@ -3,6 +3,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { Main, Materials, ActivityHistory, Pagination } from './style';
 import Card from '../../components/Card';
 import Track from '../../components/Track';
+import { formatActivityDate } from '../../helpers';
 
 const materiais = [
   {
@@ -34,42 +35,42 @@ const materiais = [
     amount: 0,
   },
   {
-    id: 3,
+    id: 5,
     name: 'Nome Material',
     description:
       'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
     amount: 1,
   },
   {
-    id: 4,
+    id: 6,
     name: 'Nome Material',
     description:
       'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
     amount: 0,
   },
   {
-    id: 3,
+    id: 7,
     name: 'Nome Material',
     description:
       'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
     amount: 1,
   },
   {
-    id: 4,
+    id: 8,
     name: 'Nome Material',
     description:
       'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
     amount: 0,
   },
   {
-    id: 3,
+    id: 9,
     name: 'Nome Material',
     description:
       'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
     amount: 1,
   },
   {
-    id: 4,
+    id: 10,
     name: 'Nome Material',
     description:
       'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
@@ -112,36 +113,50 @@ const history = [
   },
 ];
 
-const Material = () => (
-  <Main>
-    <Materials>
-      {materiais.map((e) => (
-        <Card
-          key={e.id}
-          name={e.name}
-          description={e.description}
-          hasMaterials={e.amount !== 0}
-        />
-      ))}
-    </Materials>
-    <ActivityHistory>
-      <div>
-        <h1>Registro de Atividades</h1>
-        {history.map((m) => (
-          <Track
-            name={m.material.name}
-            returnStatus={m.return_time ? 'DEVOLVIDO' : 'EMPRESTADO'}
-            tooker={m.tooker_id}
-            status={m.return_time ? 'Devolvido' : 'Não Devolvido'}
+const Material = () => {
+  const loans = history.map((loan) => {
+    if (!loan.return_time) {
+      loan.loan_time = formatActivityDate(loan.loan_time);
+      return loan;
+    }
+    loan.return_time = formatActivityDate(loan.return_time);
+    return loan;
+  });
+  const materials = materiais.sort((a, b) => b.amount - a.amount);
+
+  return (
+    <Main>
+      <Materials>
+        {materials.map((e) => (
+          <Card
+            key={e.id}
+            name={e.name}
+            description={e.description}
+            hasMaterials={e.amount !== 0}
           />
         ))}
-      </div>
-      <Pagination>
-        <MdKeyboardArrowLeft size={40} />
-        <MdKeyboardArrowRight size={40} />
-      </Pagination>
-    </ActivityHistory>
-  </Main>
-);
-// Name, Action, ReturnTime, TookerID, Status
+      </Materials>
+      <ActivityHistory>
+        <div>
+          <h1>Registro de Atividades</h1>
+          {loans.map((l) => (
+            <Track
+              key={l.id}
+              name={l.material.name}
+              returnStatus={l.return_time ? 'DEVOLVIDO' : 'EMPRESTADO'}
+              tooker={l.tooker_id}
+              status={l.return_time ? 'Devolvido' : 'Não Devolvido'}
+              time={l.return_time ? l.return_time : l.loan_time}
+            />
+          ))}
+        </div>
+        <Pagination>
+          <MdKeyboardArrowLeft size={40} />
+          <MdKeyboardArrowRight size={40} />
+        </Pagination>
+      </ActivityHistory>
+    </Main>
+  );
+};
+
 export default Material;

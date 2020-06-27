@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import { Container, MainInformation, SecondaryInformation } from './style';
 
-const Track = ({ name, returnStatus, tooker, status }) => {
+const Track = ({ name, returnStatus, tooker, status, time }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -11,7 +11,9 @@ const Track = ({ name, returnStatus, tooker, status }) => {
       <MainInformation>
         <div>
           <h2>{name}</h2>
-          <span>{returnStatus} há 2 minutos</span>
+          <span>
+            {returnStatus} {time}
+          </span>
         </div>
         {open ? (
           <MdKeyboardArrowUp size={30} onClick={() => setOpen(!open)} />
@@ -35,6 +37,7 @@ Track.propTypes = {
   returnStatus: PropTypes.string.isRequired,
   tooker: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
 };
 
 export default Track;
