@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import { Container, MainInformation, SecondaryInformation } from './style';
 
-const Track = () => {
+const Track = ({ name, returnStatus, tooker, status }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <Container open={open}>
       <MainInformation>
         <div>
-          <h2>Nome Material</h2>
-          <span>DEVOLVIDO há 2 minutos</span>
+          <h2>{name}</h2>
+          <span>{returnStatus} há 2 minutos</span>
         </div>
         {open ? (
           <MdKeyboardArrowUp size={30} onClick={() => setOpen(!open)} />
@@ -21,12 +22,19 @@ const Track = () => {
       <SecondaryInformation open={open}>
         <div>
           <h3>Emp. para:</h3>
-          <span>20161038060002</span>
+          <span>{tooker}</span>
         </div>
-        <h3>Não devolvido</h3>
+        <h3>{status}</h3>
       </SecondaryInformation>
     </Container>
   );
+};
+
+Track.propTypes = {
+  name: PropTypes.string.isRequired,
+  returnStatus: PropTypes.string.isRequired,
+  tooker: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export default Track;

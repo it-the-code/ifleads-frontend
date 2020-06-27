@@ -20,6 +20,12 @@ export const ActivityHistory = styled.div`
   flex-basis: 30%;
   background: white;
   padding: 1.5em 0.8em;
+  height: 31em;
+  max-height: 31em;
+  position: fixed;
+  right: 5em;
+  width: 20em;
+  box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.15);
 
   h1 {
     font-size: 0.9rem;
