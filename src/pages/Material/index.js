@@ -1,82 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { Main, Materials, ActivityHistory, Pagination } from './style';
 import Card from '../../components/Card';
 import Track from '../../components/Track';
 import { formatActivityDate } from '../../helpers';
-
-const materiais = [
-  {
-    id: 1,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 3,
-  },
-  {
-    id: 2,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 2,
-  },
-  {
-    id: 3,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 1,
-  },
-  {
-    id: 4,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 0,
-  },
-  {
-    id: 5,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 1,
-  },
-  {
-    id: 6,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 0,
-  },
-  {
-    id: 7,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 1,
-  },
-  {
-    id: 8,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 0,
-  },
-  {
-    id: 9,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 1,
-  },
-  {
-    id: 10,
-    name: 'Nome Material',
-    description:
-      'Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....',
-    amount: 0,
-  },
-];
 
 const history = [
   {
@@ -114,27 +42,34 @@ const history = [
 ];
 
 const Material = () => {
-  const loans = history.map((loan) => {
-    if (!loan.return_time) {
-      loan.loan_time = formatActivityDate(loan.loan_time);
-      return loan;
-    }
-    loan.return_time = formatActivityDate(loan.return_time);
-    return loan;
-  });
-  const materials = materiais.sort((a, b) => b.amount - a.amount);
+  const materials = useSelector((state) => state.materials);
+  const loans = useMemo(
+    () =>
+      history.map((loan) => {
+        if (!loan.return_time) {
+          loan.loan_time = formatActivityDate(loan.loan_time);
+          return loan;
+        }
+        loan.return_time = formatActivityDate(loan.return_time);
+        return loan;
+      }),
+    []
+  );
 
   return (
     <Main>
       <Materials>
-        {materials.map((e) => (
-          <Card
-            key={e.id}
-            name={e.name}
-            description={e.description}
-            hasMaterials={e.amount !== 0}
-          />
-        ))}
+        {materials
+          .slice()
+          .sort((a, b) => b.amount - a.amount)
+          .map((e) => (
+            <Card
+              key={e.id}
+              name={e.name}
+              description={e.description}
+              hasMaterials={e.amount !== 0}
+            />
+          ))}
       </Materials>
       <ActivityHistory>
         <div>

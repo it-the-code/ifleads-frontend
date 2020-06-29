@@ -3,71 +3,61 @@
     {
       "id": 1,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 3
     },
     {
       "id": 2,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 2
     },
     {
       "id": 3,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 1
     },
     {
       "id": 4,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 0
     },
     {
       "id": 5,
       "name": "ome Material",
-      "description":
-        "ussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "ussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 1
     },
     {
       "id": 6,
       "name": "ome Material",
-      "description":
-        "ussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "ussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 0
     },
     {
       "id": 7,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 1
     },
     {
       "id": 8,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 0
     },
     {
       "id": 9,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 1
     },
     {
       "id": 10,
       "name": "Nome Material",
-      "description":
-        "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
+      "description": "Mussum Ipsum, cacilds vidis lito abertis. Quem num gosta di mim....",
       "amount": 0
     }
   ],

@@ -28,5 +28,6 @@ module.exports = {
     'no-param-reassign': 0,
     'no-confusing-arrow': 0,
     'react/jsx-one-expression-per-line': 0,
+    'implicit-arrow-linebreak': 0
   },
 };

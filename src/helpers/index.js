@@ -11,7 +11,6 @@ import {
 export const formatActivityDate = (desiredDatetime) => {
   const now = new Date();
   const datetime = toDate(parseISO(desiredDatetime));
-
   const days = differenceInDays(now, datetime);
   if (days > 7) {
     return format(datetime, 'dd/LL/yyyy');
