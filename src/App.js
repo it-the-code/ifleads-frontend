@@ -8,6 +8,7 @@ import Routes from './routes';
 
 const App = () => {
   const dispatch = useDispatch();
+  dispatch({ type: 'FETCH_LOAN_REQUESTED' });
   dispatch({ type: 'FETCH_MATERIAL_REQUESTED' });
   return (
     <Router history={history}>
