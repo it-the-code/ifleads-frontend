@@ -70,7 +70,8 @@
       "deleted_at": null,
       "material": {
         "name": "Caixa de Som"
-      }
+      },
+      "updated_at": "2020-06-26 17:22:55"
     },
     {
       "id": 2,
@@ -80,7 +81,8 @@
       "deleted_at": null,
       "material": {
         "name": "Caixa de Som"
-      }
+      },
+      "updated_at": "2020-06-10 17:22:55"
     },
     {
       "id": 3,
@@ -92,7 +94,8 @@
       "material_id": 1,
       "material": {
         "name": "Caixa de Som"
-      }
+      },
+      "updated_at": "2020-06-09 17:22:55"
     }
   ]
 }

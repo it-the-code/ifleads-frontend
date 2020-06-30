@@ -33,3 +33,5 @@ export const formatActivityDate = (desiredDatetime) => {
   const seconds = differenceInSeconds(now, datetime);
   return `há ${seconds} segundos`;
 };
+
+export const parseToDate = (text) => toDate(parseISO(text));

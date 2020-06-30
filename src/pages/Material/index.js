@@ -8,7 +8,7 @@ import Track from '../../components/Track';
 const Material = () => {
   const materials = useSelector((state) => state.materials);
   const loans = useSelector((state) => state.loans);
-  console.log(loans);
+
   return (
     <Main>
       <Materials>
