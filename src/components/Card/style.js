@@ -12,7 +12,6 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
 
   button {
     background: var(--blue);
@@ -34,6 +33,7 @@ export const CardInformation = styled.div`
 
   p {
     font-size: 0.9rem;
+    cursor: default;
   }
 `;
 
@@ -47,6 +47,7 @@ export const CardHeading = styled.div`
   h1 {
     font-size: 1rem;
     letter-spacing: 0.1em;
+    cursor: default;
   }
 
   svg {

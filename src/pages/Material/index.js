@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { Main, Materials, ActivityHistory, Pagination } from './style';
+import { Main, Materials } from './style';
 import Card from '../../components/Card';
-import Track from '../../components/Track';
+import ActivityHistory from '../../components/ActivityHistory';
 
 const Material = () => {
   const materials = useSelector((state) => state.materials);
@@ -24,25 +23,7 @@ const Material = () => {
             />
           ))}
       </Materials>
-      <ActivityHistory>
-        <div>
-          <h1>Registro de Atividades</h1>
-          {loans.map((l) => (
-            <Track
-              key={l.id}
-              name={l.material.name}
-              returnStatus={l.return_time ? 'DEVOLVIDO' : 'EMPRESTADO'}
-              tooker={l.tooker_id}
-              status={l.return_time ? 'Devolvido' : 'Não Devolvido'}
-              time={l.return_time ? l.return_time : l.loan_time}
-            />
-          ))}
-        </div>
-        <Pagination>
-          <MdKeyboardArrowLeft size={40} />
-          <MdKeyboardArrowRight size={40} />
-        </Pagination>
-      </ActivityHistory>
+      <ActivityHistory loans={loans} />
     </Main>
   );
 };

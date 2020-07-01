@@ -96,6 +96,19 @@
         "name": "Caixa de Som"
       },
       "updated_at": "2020-06-09 17:22:55"
+    },
+    {
+      "id": 4,
+      "tooker_id": "1234567890",
+      "loan_time": "2020-06-09 17:20:55",
+      "return_time": null,
+      "deleted_at": null,
+      "user_id": 1,
+      "material_id": 1,
+      "material": {
+        "name": "Caixa de Som"
+      },
+      "updated_at": "2020-06-09 17:20:55"
     }
   ]
 }
