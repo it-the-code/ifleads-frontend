@@ -7,8 +7,8 @@ export const Container = styled.div`
   flex-basis: 30%;
   background: white;
   padding: 1.5em 0.8em;
-  height: 31em;
-  max-height: 31em;
+  height: 32em;
+  max-height: 32em;
   position: fixed;
   right: 5em;
   width: 20em;

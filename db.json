@@ -68,6 +68,8 @@
       "loan_time": "2020-06-26 17:22:55",
       "return_time": null,
       "deleted_at": null,
+      "user_id": 1,
+      "material_id": 1,
       "material": {
         "name": "Caixa de Som"
       },
@@ -79,6 +81,8 @@
       "loan_time": "2020-06-09 17:22:55",
       "return_time": "2020-06-10 17:22:55",
       "deleted_at": null,
+      "user_id": 1,
+      "material_id": 1,
       "material": {
         "name": "Caixa de Som"
       },

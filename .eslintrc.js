@@ -29,5 +29,6 @@ module.exports = {
     'no-confusing-arrow': 0,
     'react/jsx-one-expression-per-line': 0,
     'implicit-arrow-linebreak': 0,
+    'function-paren-newline': 0
   },
 };
