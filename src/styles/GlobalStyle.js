@@ -8,7 +8,7 @@ font-size: 1em;
 --red: #FA4659;
 --dark-green: #79D1C3;
 --light-green: #C9FDD7;
---light-grey: #E5E5E5;
+--light-grey: #F8FCFB; 
 }
 
 *,
