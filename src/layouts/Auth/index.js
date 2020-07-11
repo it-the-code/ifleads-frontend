@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 
 const Auth = ({ children }) => (
-  <>
+  <div>
     <Header />
+    asdfs
     {children}
-  </>
+  </div>
 );
 
 Auth.propTypes = {
