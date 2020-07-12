@@ -11,6 +11,7 @@ export const Navbar = styled.div`
   padding: 0 3em;
   background-color: var(--blue);
   color: white;
+  z-index: 5;
 `;
 
 export const Menu = styled.div`

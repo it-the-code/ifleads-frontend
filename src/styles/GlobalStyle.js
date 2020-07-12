@@ -9,6 +9,7 @@ font-size: 1em;
 --dark-green: #79D1C3;
 --light-green: #C9FDD7;
 --light-grey: #E5E5E5;
+--dark-grey: #666666;
 }
 
 *,
