@@ -23,40 +23,33 @@ const Material = () => {
       });
   }, []);
 
-  useEffect(() => {
-    api
-      .get('/loans')
-      .then((response) => {
-        if (response.status === 200) {
-          const formattedLoans = response.data
-            .map((l) => {
-              if (l.return_time) {
-                l.return_time = formatRelative(
-                  toDate(parseISO(l.return_time)),
-                  new Date(),
-                  {
-                    locale: pt,
-                  }
-                );
-              } else {
-                l.loan_time = formatRelative(
-                  toDate(parseISO(l.loan_time)),
-                  new Date(),
-                  {
-                    locale: pt,
-                  }
-                );
-              }
-              l.updated_at = parseISO(l.updated_at);
-              return l;
-            })
-            .sort((a, b) => compareDesc(a.updated_at, b.updated_at));
-          setLoans(formattedLoans);
+  useEffect(async () => {
+    const { data } = await api.get('/loans');
+
+    const formattedLoans = data
+      .map((l) => {
+        if (l.return_time) {
+          l.return_time = formatRelative(
+            toDate(parseISO(l.return_time)),
+            new Date(),
+            {
+              locale: pt,
+            }
+          );
+        } else {
+          l.loan_time = formatRelative(
+            toDate(parseISO(l.loan_time)),
+            new Date(),
+            {
+              locale: pt,
+            }
+          );
         }
+        l.updated_at = parseISO(l.updated_at);
+        return l;
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .sort((a, b) => compareDesc(a.updated_at, b.updated_at));
+    setLoans(formattedLoans);
   }, []);
 
   return (
