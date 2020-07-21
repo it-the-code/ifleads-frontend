@@ -20,4 +20,14 @@ function* signIn({ payload }) {
   }
 }
 
-export default all([takeLatest(AuthTypes.signInRequest, signIn)]);
+function setToken({ payload }) {
+  if (payload.auth && payload.auth.token) {
+    // Set token to requests
+    api.defaults.headers.Authorization = `Baerer ${payload.auth.token}`;
+  }
+}
+
+export default all([
+  takeLatest(AuthTypes.signInRequest, signIn),
+  takeLatest('persist/REHYDRATE', setToken),
+]);
