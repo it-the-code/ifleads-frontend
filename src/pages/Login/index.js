@@ -16,7 +16,6 @@ const Login = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    console.log('submit');
     dispatch(signInRequest({ email, password }));
   }
 
