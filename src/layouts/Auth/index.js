@@ -6,7 +6,6 @@ import Header from '../../components/Header';
 const Auth = ({ children }) => (
   <div>
     <Header />
-    asdfs
     {children}
   </div>
 );

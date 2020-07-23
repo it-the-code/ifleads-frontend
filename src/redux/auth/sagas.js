@@ -12,7 +12,7 @@ function* signIn({ payload }) {
     const response = yield call(api.post, '/login', payload);
     const { token } = response.data;
     // Set token to requests
-    api.defaults.headers.Authorization = `Baerer ${token}`;
+    api.defaults.headers.Authorization = `Bearer ${token}`;
     yield put(signInSuccess({ token }));
     history.push('/materials');
   } catch (err) {
@@ -23,7 +23,7 @@ function* signIn({ payload }) {
 function setToken({ payload }) {
   if (payload.auth && payload.auth.token) {
     // Set token to requests
-    api.defaults.headers.Authorization = `Baerer ${payload.auth.token}`;
+    api.defaults.headers.Authorization = `Bearer ${payload.auth.token}`;
   }
 }
 
