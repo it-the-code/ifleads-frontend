@@ -1,14 +1,15 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import GlobalStyle from './styles/global-style';
+
 import history from './services/history';
-import { Header } from './components';
-import GlobalStyle from './styles/GlobalStyle';
 import Routes from './routes';
 
 const App = () => (
   <Router history={history}>
+    <ToastContainer autoClose={3000} />
     <GlobalStyle />
-    <Header />
     <Routes />
   </Router>
 );

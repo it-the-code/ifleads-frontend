@@ -1,15 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-toastify/dist/ReactToastify.min.css';
+
 export default createGlobalStyle`
 :root {
-font-size: 1em;
+  font-size: 1em;
 
---blue: #6892D5;
---red: #FA4659;
---dark-green: #79D1C3;
---light-green: #C9FDD7;
---light-grey: #E5E5E5;
---dark-grey: #666666;
+  --blue: #6892D5;
+  --red: #FA4659;
+  --dark-green: #79D1C3;
+  --light-green: #C9FDD7;
+  --light-grey: #F8FCFB;
+  --dark-grey: #666666;
 }
 
 *,
