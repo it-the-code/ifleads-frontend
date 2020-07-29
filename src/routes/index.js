@@ -7,7 +7,7 @@ import { MaterialPage, LoanPage, LostPage, Login } from '../pages';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" component={Login} />
+    <Route path="/" exact component={Login} />
     <Route path="/materials" auth component={MaterialPage} />
     <Route path="/loans" auth component={LoanPage} />
     <Route path="/losts" auth component={LostPage} />

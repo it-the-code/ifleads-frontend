@@ -37,3 +37,10 @@ export const Button = styled.button`
     opacity: ${(props) => (props.disabled ? '0.45' : '1')};
   }
 `;
+
+export const NotFoundLoans = styled.h5`
+  color: #999999;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+`;
