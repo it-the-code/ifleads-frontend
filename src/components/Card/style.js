@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Card = styled.div`
   background: white;
   padding: 1em;
-  max-width: 15em;
+  width: 15em;
+  max-height: 15em;
   line-height: 1.3em;
   border-radius: 4px;
   margin: 0 1.5em 1.5em 0;

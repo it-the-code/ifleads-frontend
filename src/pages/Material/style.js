@@ -12,3 +12,9 @@ export const Materials = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
+export const NotFoundMaterials = styled.h3`
+  color: #999999;
+  font-weight: 500;
+  font-style: italic;
+`;

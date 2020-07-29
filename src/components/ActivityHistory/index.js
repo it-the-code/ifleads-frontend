@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { Container, Pagination, Button } from './style';
+import { Container, Pagination, Button, NotFoundLoans } from './style';
 import Track from '../Track';
 
 const ActivityHistory = ({ loans }) => {
@@ -18,16 +18,22 @@ const ActivityHistory = ({ loans }) => {
     <Container>
       <div>
         <h1>Registro de Atividades</h1>
-        {loans.slice(start, end).map((l) => (
-          <Track
-            key={l.id}
-            name={l.material.name}
-            returnStatus={l.return_time ? 'DEVOLVIDO' : 'EMPRESTADO'}
-            tooker={l.tooker_id}
-            status={l.return_time ? 'Devolvido' : 'Não Devolvido'}
-            time={l.return_time ? l.return_time : l.loan_time}
-          />
-        ))}
+        {loans.length !== 0 ? (
+          loans
+            .slice(start, end)
+            .map((l) => (
+              <Track
+                key={l.id}
+                name={l.material.name}
+                returnStatus={l.return_time ? 'DEVOLVIDO' : 'EMPRESTADO'}
+                tooker={l.tooker_id}
+                status={l.return_time ? 'Devolvido' : 'Não Devolvido'}
+                time={l.return_time ? l.return_time : l.loan_time}
+              />
+            ))
+        ) : (
+          <NotFoundLoans>Nada no histórico para ser exibido</NotFoundLoans>
+        )}
       </div>
       <Pagination>
         <Button
